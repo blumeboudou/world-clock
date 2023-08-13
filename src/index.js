@@ -10,6 +10,16 @@ function updateTime() {
   buenosAiresTimeElement.innerHTML = `${buenosAiresTime.format("h:mm:ss")}
 <small>${buenosAiresTime.format("A")}</small>`;
 
+  // London
+  let londonElement = document.querySelector("#london");
+  let londonDateElement = londonElement.querySelector(".date");
+  let londonTimeElement = londonElement.querySelector(".time");
+  let londonTime = moment().tz("Europe/London");
+
+  londonDateElement.innerHTML = londonTime.format("dddd Do MMMM YYYY");
+  londonTimeElement.innerHTML = `${londonTime.format("h:mm:ss")}
+<small>${londonTime.format("A")}</small>`;
+
   // Sydney
   let sydneyElement = document.querySelector("#sydney");
   let sydneyDateElement = sydneyElement.querySelector(".date");
